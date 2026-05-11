@@ -78,7 +78,7 @@ class TaskController extends Controller
         // }
         $this->authorize('delete', $task);
         $task->update($request->validated());
-        return redirect()->route('task.index')->with('success', 'タスクを更新しました。');
+        return redirect()->route('tasks.index')->with('success', 'タスクを更新しました。');
     }
 
     /**
@@ -90,6 +90,6 @@ class TaskController extends Controller
             abort(403);
         }
         $task->delete();
-        return redirect()->route()('tasks.index')->with('success', 'タスクを削除しました。');
+        return redirect()->route('tasks.index')->with('success', 'タスクを削除しました。');
     }
 }
